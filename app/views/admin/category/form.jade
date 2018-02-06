@@ -1,0 +1,50 @@
+extends ../layouts/default
+
+block content
+    include base
+    include alert
+    form.form-horizontal(role='form' method='post' action='#{url}/save')
+        +formInput("名称", "display_name", model, true)
+        +formInput("别名", "name", model, true)
+        +formInput("视频链接", "video", model, false)
+        div.form-group
+            label.col-sm-2.control-label 产品介绍
+            div.col-sm-10
+                textarea.form-control(name="desc", cols="30", rows="10")
+                    | #{model&&model.desc}
+        div.form-group
+            label.col-sm-2.control-label 栏目封面图
+            div.col-sm-10.admin_article
+                input#images(type="hidden" name="image" value=model&&model.image)
+                span.btn.btn-success.fileinput-button
+                    i.glyphicon.glyphicon-plus
+                    span 添加产品图
+                    input#fileuploader(
+                        type="file"
+                        name="files[]"
+                    )
+                #images_box.row
+                    if model && model.image
+                        .col-sm-3
+                            .thumbnail
+                                img(src=model.image alt="图片已不存在。点击保存按钮后，会自动删除")
+                                .caption
+                                    p
+                                        button.btn.btn-danger(
+                                            type="button"
+                                            onclick="delete_imgs(this, '#{model.image}', '/category/')"
+                                        ) 删
+        div.form-group
+            div.col-sm-offset-2.col-sm-10
+                button.btn.btn-success 保存
+                if model
+                    input(type="hidden" name="id" value='#{model._id}')
+                    - parent_id = model.parent_id
+                input(type="hidden" name="parent_id" value='#{parent_id}')
+
+block scripts
+    script.
+        $(document).ready(function() {
+            var uploadDir = "/category/"
+            fileuploadInit(uploadDir, 1)
+        })

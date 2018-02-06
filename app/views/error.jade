@@ -1,0 +1,23 @@
+doctype strict
+html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="ja")
+    head
+        title= title
+        include ./layouts/head
+
+        style.
+            .clearfix{width:100%;margin:30px 0 0;font-size:0;}
+            .clearfix div{display:inline-block;width:2%;}
+            .clearfix a{display:inline-block;width:47%;padding:1em 0;text-decoration:none;font-size:18px;letter-spacing:0.1em;background-color:#EEE;border-radius:3px;box-shadow:inset #ddd 0 0 10px;}
+            .clearfix a:hover{text-decoration:underline;background-color:#DDD;}
+    body
+        #bhs_contents
+            #bhs_contentsWrap
+                div(style='padding:30px 0px 120px;')
+                    div(style='padding:150px 0;text-align:center;border:1px #ccc solid;')
+                        p(style='font-size:36px;color:#666;') #{error.status}
+                        p(style='margin:10px 0 0;font-size:24px;letter-spacing:0.1em;color:#666;')
+                            | #{message}
+                        .clearfix
+                            a(href='/') 首页
+                            div
+                            a(href='javascript:history.back();') 后退

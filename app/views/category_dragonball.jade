@@ -1,0 +1,67 @@
+extends ./layouts/default
+
+block body
+    - var prefix = category.name
+    body(
+        class="#{category.name} main"
+        style={
+            'background-image': 'url(/img/' + category.name + '.jpg)',
+        }
+    )
+        .layout
+            img.desc-title(src="/img/#{prefix}/desc-title.png")
+            .video-box
+                img.video-idle.wow.bounceInRight(src="/img/#{prefix}/idle-1.png", data-wow-offset="150")
+                .video
+                    | !{category.video}
+            .desc
+                .desc-bg.wow.zoomIn(data-wow-offset="120")
+                img.idle.wow.bounceInRight(src="/img/#{prefix}/idle-2.png")
+            .news-box
+                img.news-idle.wow.bounceInLeft(src="/img/#{prefix}/idle-3.png",data-wow-offset="150")
+                img.news-title(src="/img/#{prefix}/news-title.png")
+                img.news-more(src="/img/#{prefix}/news-more.png")
+                .news
+                    ul.news-list.list-unstyled
+                        if (news)
+                            each item in news
+                                li
+                                    +title(item)
+            .products
+                img.products-title(src="/img/#{prefix}/products-title.png")
+                .products-top
+                    - var n = 0
+                    while n < 3
+                        div(class="products-top-#{n+1}")
+                            img.idle.wow(
+                                src="/img/#{prefix}/idle-#{n+4}.png"
+                                class="#{n==1?'bounceInLeft':'bounceInRight'}"
+                                data-wow-offset="150"
+                            )
+                            if (products && products[n])
+                                - var item = products[n]
+                                div.content
+                                    if ( (n+1) < 3 )
+                                        img.ball(src="/img/#{prefix}/ico.png")
+                                    img.content_cover(
+                                        src="#{item.cover_pic}"
+                                    )
+                                    p.content_title
+                                        +title(item)
+                        - n++
+                .products-list
+                    img.idle.wow.bounceInRight(src="/img/#{prefix}/idle-7.png",data-wow-offset="150")
+                    img.ball(src="/img/#{prefix}/ico.png")
+                    .content
+                        ul.list-unstyled
+                            if (products)
+                                each item, x in products
+                                    if (x > 2)
+                                        li
+                                            +title(item)
+                    h3.text-center
+                        | 更多评测
+            .foot
+                img.img-responsive.idle.wow.zoomIn(src="/img/#{prefix}/foot.png",data-wow-offset="250")
+                .sale
+                    img.img-responsive(src="/img/#{prefix}/sale.png")

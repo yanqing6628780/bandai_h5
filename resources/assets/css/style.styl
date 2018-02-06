@@ -1,0 +1,559 @@
+font-color = #551800
+@media only screen and (min-width: 320px)
+    html
+        font-size: 96px
+
+@media only screen and (min-width: 375px)
+    html
+        font-size: 100px
+
+@media only screen and (min-width: 412px)
+    html
+        font-size: 111px
+
+@media only screen and (min-width: 768px)
+    html
+        font-size: 206px
+
+a:active
+a:hover
+a:link
+a:visited
+    text-decoration none
+
+.dn
+    display: none
+
+.login-box
+    margin: 40px auto
+    width 330px
+    background-color rgba(0,0,0,0.4)
+    padding 5px 15px 20px
+    color #ffffff
+
+.admin
+    &_body
+        background-color: #eee
+        .filter-col
+            padding-left: 10px
+            padding-right: 10px
+    &_article
+        .thumbnail
+            img
+                max-height: 120px
+
+.main
+    font-size: 12px
+    overflow-x: hidden
+    font-family: '微软雅黑'
+    background-position: top center
+    background-size: cover
+    background-repeat: no-repeat
+    a:active
+    a:hover
+    a:link
+    a:visited
+        color: font-color
+
+@media only screen and (min-width: 768px)
+    .main
+        font-size: 20px
+
+.layout
+    width: 3.1rem
+    margin: auto
+
+background(imgName)
+    $filename = '../img/'+imgName+'.png'
+    background-image: url($filename);
+    background-size: contain;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 3.1rem;
+    margin: auto;
+    position relative
+
+ellipsis(w)
+    width: w;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+.products
+    .content_title
+        a
+            ellipsis(95%)
+            margin: auto;
+            display: inline-block
+    &-top .content a
+        @extend .products .content_title a
+    .products-list
+        li
+            a
+                @extend .products .content_title a
+
+.foot
+    .idle
+        animation-duration: 0.6s;
+
+.onepiece
+    color: font-color
+    .video
+        background('onepiece-video')
+        margin-top: 2.65rem;
+        height: 3.3rem;
+        iframe
+            width: 2.67rem !important;
+            height: 1.7rem !important;
+            margin: auto;
+            margin-top: 1.36rem;
+    .desc
+        margin-top: 10px
+        &-bg
+            background('onepiece-desc')
+            height: 2.06rem
+        &-ico
+            position absolute
+            right: -.09rem;
+            bottom: -.25rem;
+            width: .90rem;
+    .news
+        background('onepiece-news')
+        margin-top 1.39rem
+        height: 2.84rem
+        &-list
+            width: 90%
+            margin: auto
+            padding-top: .65rem
+            li
+                background-image: url(../img/onepiece-new-bg.png)
+                background-size: contain;
+                text-align: center;
+                background-repeat: no-repeat;
+                background-position: center center;
+                height: .33rem;
+                line-height: .30rem;
+                margin-bottom: .12rem
+                font-size: 120%
+                font-weight: bold
+                a
+                    color: #fff
+                    text-shadow: 2px 3px 1px #000
+        &-ico
+            position absolute
+            right: -.10rem
+            top: .10rem
+            width: .50rem
+        &-idle
+            position: absolute;
+            left: -.50rem;
+            bottom: -1.47rem;
+            width: 1.8rem;
+        &-more
+            position: absolute;
+            right: .30rem;
+            bottom: .30rem;
+            width: .75rem;
+
+    .products
+        margin-top 3.94rem
+        .content
+            &_cover
+                width: 100%;
+                height: 1.74rem;
+            &_title
+                font-size: 150%;
+                font-weight: bold;
+                line-height: .36rem;
+        &-top-1
+            background('onepiece-top-1')
+            height: 2.31rem
+            .content
+                &_cover
+                    padding-left: .35rem;
+                    padding-right: .30rem;
+                    padding-top: .33rem;
+            .idle
+                position: absolute;
+                right: -.34rem;
+                top: -1.32rem;
+                width: 1.34rem;
+            .title
+                position: absolute;
+                left: -.05rem;
+                top: -.30rem;
+                width: 2.15rem;
+        &-top-2
+            background('onepiece-top-2')
+            height: 2.45rem
+            margin-top: .83rem
+            .content
+                &_cover
+                    padding-left: .30rem
+                    padding-right: .30rem
+                    padding-top: .38rem
+                    height: 1.83rem
+            .idle
+                position: absolute;
+                left: -.83rem;
+                top: -.71rem;
+                width: 2.90rem;
+            .title
+                position: absolute;
+                right: -.08rem;
+                bottom: -.04rem;
+                width: .50rem;
+        &-top-3
+            background('onepiece-top-3')
+            height: 2.45rem
+            position relative
+            margin-top: .68rem
+            .content
+                &_cover
+                    padding-left: .31rem
+                    padding-right: .30rem
+                    padding-top: .40rem
+                    height: 1.83rem
+            .idle
+                position: absolute;
+                right: -1.08rem
+                top: -.60rem
+                width: 2.00rem
+            .title
+                position: absolute;
+                left: -.05rem
+                top: -.30rem
+                width: 2.15rem
+        &-list
+            background('onepiece-list')
+            height: 2.45rem
+            margin-top: 22%
+            .idle
+                position: absolute;
+                left: -.35rem
+                top: .24rem
+                width: .85rem
+            .content
+                font-weight: bold
+                h3
+                    font-weight: bold
+                    font-size: 150%
+                text-align: left
+                padding: .23rem .25rem .33rem .63rem
+                li
+                    font-size: 120%
+                    line-height: .23rem
+    .foot
+        margin-top: .46rem
+        height: 4.10rem
+        .sale
+            width: 50%
+            margin: auto
+
+@media only screen and (min-width 375px) and (max-width: 412px)
+    .onepiece
+        .foot
+            margin-top: 1rem
+
+background2(dir, imgName, filetype='png')
+    $filename = '../img/'+ dir '/' +imgName+'.'+filetype
+    background-image: url($filename);
+    background-size: contain;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: auto;
+    position relative
+    width: 3.1rem
+
+.dragonball
+    color: font-color
+    .layout
+        position relative
+        margin-top: 5.8rem
+        width: auto
+    .video-box
+        position relative
+        margin-top: 0.2rem
+    .video
+        background2('dragonball', 'video', 'jpg')
+        height: 1.96rem;
+        position relative
+        iframe
+            width: 3.1rem !important;
+            height: 1.97rem !important;
+        &-idle
+            position absolute
+            right: -0.075rem;
+            top: -1.87rem;
+            width: 1.1rem;
+            z-index: 1;
+    .desc
+        position relative
+        &-bg
+            background2('dragonball', 'desc')
+            width: 3.23rem;
+            height: 3.32rem;
+            margin-top: 0.15rem
+        &-title
+            height: 0.47rem;
+        .idle
+            position absolute
+            right: -0.11rem;
+            bottom: -0.32rem;
+            width: 1.27rem;
+    .news-box
+        position relative
+        margin-top: 2.51rem;
+    .news
+        background2('dragonball', 'news')
+        width: 3.3rem
+        height: 3.14rem;
+        &-title
+            position absolute
+            right: 0
+            top: -0.847rem;
+            width: 2.4rem;
+        &-list
+            margin: auto
+            padding-top: 0.528rem
+            li
+                background2('dragonball', 'new-bg')
+                height: 0.35rem;
+                line-height: 0.33rem;
+                margin-bottom: .18rem
+                font-size: 120%
+                font-weight: bold
+                a
+                    color: #FF8A00
+        &-idle
+            position: absolute;
+            left: -0.31rem;
+            top: -1.97rem;
+            width: 1.7rem;
+            z-index: 1
+        &-more
+            position: absolute;
+            right: 0.6rem;
+            bottom: 0.3rem;
+            width: 0.5rem;
+            z-index: 1
+    .ball
+        width: 0.48rem
+    .products
+        margin-top 1.2rem
+        position relative
+        &-title
+            width: 2.32rem
+        .content
+            a
+                font-size: 120%
+                color: #fff
+            &_cover
+                margin-top: 0.33rem;
+                width: 2.42rem;
+                height: 1.82rem;
+                border-radius .06rem
+                margin-bottom: 0.25rem
+            &_title
+                font-size: 150%;
+                font-weight: bold;
+                line-height: .36rem;
+        &-top
+            margin-top: 0.75rem
+        &-top-1
+            background2('dragonball', 'products-top-1')
+            height: 2.97rem
+            margin-top: 1.35rem
+            .idle
+                position: absolute;
+                right: -0.45rem;
+                top: -1.65rem;
+                width: 1.7rem;
+            .ball
+                position: absolute;
+                left: -0.25rem;
+                top: -.25rem;
+        &-top-2
+            background2('dragonball', 'products-top-2')
+            height: 2.97rem
+            margin-top: 1.4rem
+            .idle
+                position: absolute;
+                left: -0.4rem;
+                top: -1.34rem;
+                width: 1.7rem;
+            .ball
+                position: absolute;
+                right: -0.15rem;
+                bottom: -0.24rem;
+        &-top-3
+            background2('dragonball', 'products-top-3')
+            height: 2.97rem
+            position relative
+            margin-top: 1.3rem
+            .idle
+                position: absolute;
+                right: -0.3rem;
+                bottom: -0.13rem;
+                width: 0.7rem;
+        &-list
+            background2('dragonball', 'products-list')
+            height: 2.97rem
+            margin-top: 1.25rem
+            color: #fff
+            .idle
+                position: absolute;
+                left: -0.34rem;
+                top: -1.15rem;
+                width: 1.5rem;
+            .ball
+                position: absolute;
+                left: -0.15rem;
+                bottom: -0.22rem;
+            h3
+                font-size: 180%
+            .content
+                font-weight: bold
+                text-align: left
+                padding: 0.55rem 0.4rem 0
+                height: 2.25rem
+                overflow hidden
+                li
+                    font-size: 120%
+                    line-height: 0.28rem
+                    a
+                        ellipsis(110%)
+                        color: #000
+                        display: block
+    .foot
+        margin-top: 2rem
+        height: 5rem
+        .sale
+            width: 50%
+            margin: 0.2rem auto
+
+.disney
+    .layout
+        margin-top: 2.7rem
+        text-align: center
+        width: auto
+    .video
+        background2('disney', 'video', 'jpg')
+        height: 2.1rem;
+        position relative
+        &-box
+            margin-top: .2rem
+        iframe
+            width: 2.6rem !important;
+            height: 1.72rem !important;
+            margin-top: 0.19rem;
+    .desc
+        &-title
+            height: .57rem
+        &-bg
+            background2('disney', 'desc')
+            width: auto
+            margin-top: 0.1rem
+            height: 2.5rem
+    .news
+        width: 3.1rem
+        margin: auto
+        position relative
+        &-box
+            margin-top: 2.25rem
+        &-title
+            height: .57rem
+        &-list
+            margin-top: 0.12rem
+            li
+                background2('disney', 'new-bg')
+                height: 0.68rem
+                line-height 0.65rem
+                font-size: 140%
+                font-weight: bold
+                margin-bottom: -0.05rem
+                a
+                    color: #fff
+        &-more
+            position absolute
+            right: .15rem;
+            bottom: -0.35rem;
+            width: .9rem;
+    .products
+        margin-top: 0.48rem
+        position relative
+        padding-bottom 0.6rem
+        &-title
+            @extend .disney .news-title
+        &-more
+            @extend .disney .news-more
+            bottom: 0
+            right: 0.28rem
+        &-top
+            background2('disney', 'products-top')
+            position relative
+            width: 2.56rem
+            height: 1.65rem
+            box-shadow: -2px 3px 7px #666
+            .content
+                &_cover
+                    margin-top: 0.12rem;
+                    width: 2.3rem;
+                    height: 1.26rem;
+                a
+                    font-size: 140%
+                    color: #3478C1
+                &-title
+                    text-align: center
+                    line-height: .22rem
+        &-top-1
+            margin-top: 0.3rem
+            .idle
+                position absolute
+                width: 1.1rem
+                top: 0.2rem
+                right: -0.65rem
+        &-top-2
+            margin-top: 0.46rem
+            .idle
+                position absolute
+                width: 0.7rem;
+                top: 0.11rem;
+                left: -0.6rem;
+                z-index: -1;
+        &-top-3
+            margin-top: 0.5rem
+            .idle
+                position absolute
+                width: 1.02rem;
+                top: 0.2rem;
+                right: -0.84rem;
+        &-top-4
+            margin-top: 0.5rem
+            .idle
+                position absolute
+                width: 1rem;
+                top: 0.4rem;
+                left: -0.8rem;
+            .idle-right
+                position absolute
+                width: 0.73rem;
+                top: 0.4rem;
+                right: -0.55rem;
+    .foot
+        height 4.5rem
+        position relative
+        overflow hidden
+        .sale
+            width: 50%;
+            position: absolute;
+            left: 0.3rem;
+            bottom: 0.4rem;
+        .idle
+            height: 2.65rem;
+            position: absolute;
+            right: -0.24rem;
+            bottom: -.52rem;
+

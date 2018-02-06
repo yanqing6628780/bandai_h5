@@ -1,0 +1,28 @@
+extends ../layouts/default
+
+block content
+    div.row
+        div.col-md-12
+            a.btn.btn-success(href='#{url}/add')
+                | 新增
+    table.table
+        thead
+            th #
+            th(width="5%") 名称
+            th 栏目
+            th(width="5%") 链接
+            th(width="25%") 图片
+            th 操作
+        tbody
+            each item,index in list
+                tr
+                    td= index+1
+                    td= item.name
+                    td= item.cid.display_name
+                    td= item.url
+                    td
+                        img.img-responsive(src=item.image, alt=item.name)
+                    td
+                        .btn-group
+                            a.btn.btn-info(href='#{url}/edit/#{item._id}') 改
+                            a.btn.btn-danger(href='#{url}/delete/#{item._id}') 删

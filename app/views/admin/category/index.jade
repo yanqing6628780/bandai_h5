@@ -1,0 +1,18 @@
+extends ../layouts/default
+
+
+block content
+    include base
+    include alert
+    div.row
+        div.col-md-12
+            a.btn.btn-success(href='#{url}/add/') 新增
+    table.table
+        thead
+            th 栏目名称
+            th 父栏目
+            th 别名
+            th 操作
+        tbody
+            each item,index in list
+                +toHtml(item, 0)

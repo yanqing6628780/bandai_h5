@@ -1,0 +1,7 @@
+mixin link(data)
+    a(href=data.url ? data.url : '/article/id/#{data._id}')
+        block
+
+mixin title(data)
+    +link(data)
+        | #{data.name}
