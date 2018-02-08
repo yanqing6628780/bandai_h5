@@ -18,7 +18,8 @@ block body
             .news-box
                 img.news-title(src="/img/#{prefix}/news-title.png")
                 .news
-                    img.news-more(src="/img/#{prefix}/more.png")
+                    a(href="/category/id/#{news_id}")
+                        img.news-more(src="/img/#{prefix}/more.png")
                     ul.news-list.list-unstyled
                         if (news)
                             each item in news
@@ -26,7 +27,8 @@ block body
                                     +title(item)
             .products
                 img.products-title(src="/img/#{prefix}/products-top-title.png")
-                img.products-more(src="/img/#{prefix}/products-more.png")
+                a(href="/category/id/#{products_id}")
+                    img.products-more(src="/img/#{prefix}/products-more.png")
                 .products-top-box
                     - var n = 0
                     while n < 4

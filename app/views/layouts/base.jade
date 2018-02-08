@@ -5,3 +5,6 @@ mixin link(data)
 mixin title(data)
     +link(data)
         | #{data.name}
+
+mixin thumb-img(imgSrc, name)
+    img(src=imgSrc ? imgSrc : '/img/null.jpg', alt='#{name}')

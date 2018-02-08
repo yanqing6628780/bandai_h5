@@ -24,11 +24,19 @@ module.exports = function(app, passport) {
     var adminCtrl = controllers.admin;
     var midAuth = middlewares.authorization;
 
+    // catch 404 and forward to error handler
+    app.notFound = (req, res, next) => {
+        var err = new Error('Not Found');
+        err.status = 404;
+        return next(err);
+    };
+
     var frontPage = express.Router();
 
     frontPage.use(middlewares.view.getCommonData);
 
     frontPage.get('/', controllers.index.home);
+    frontPage.get('/article/id/:id', app.notFound);
     frontPage.get('/category/id/:id', controllers.category.id);
     frontPage.get('/category/:name', controllers.category.index);
 
@@ -170,13 +178,6 @@ module.exports = function(app, passport) {
         adminRouter.use(`/${it.url}`, router);
     }
     app.use('/admin', adminRouter);
-
-    // catch 404 and forward to error handler
-    app.notFound = (req, res, next) => {
-        var err = new Error('Not Found');
-        err.status = 404;
-        return next(err);
-    };
 
     // error handlers
     var errroHandlers = (err, req, res, next) => {

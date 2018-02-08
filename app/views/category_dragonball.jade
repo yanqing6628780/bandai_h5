@@ -20,7 +20,8 @@ block body
             .news-box
                 img.news-idle.wow.bounceInLeft(src="/img/#{prefix}/idle-3.png",data-wow-offset="150")
                 img.news-title(src="/img/#{prefix}/news-title.png")
-                img.news-more(src="/img/#{prefix}/news-more.png")
+                a(href="/category/id/#{news_id}")
+                    img.news-more(src="/img/#{prefix}/news-more.png")
                 .news
                     ul.news-list.list-unstyled
                         if (news)
@@ -60,7 +61,8 @@ block body
                                         li
                                             +title(item)
                     h3.text-center
-                        | 更多评测
+                        a(href="/category/id/#{products_id}")
+                            | 更多评测
             .foot
                 img.img-responsive.idle.wow.zoomIn(src="/img/#{prefix}/foot.png",data-wow-offset="250")
                 .sale

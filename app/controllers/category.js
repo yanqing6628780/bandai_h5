@@ -75,9 +75,10 @@ module.exports = function (app) {
             if (!rs) return next(new Error('404'));
             return rs;
         }).then((rs) => {
+            console.log(rs)
             return res.render('list', {
                 title: rs.display_name,
-                list: rs.articles
+                rs: rs
             });
         });
     };
