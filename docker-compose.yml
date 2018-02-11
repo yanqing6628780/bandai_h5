@@ -8,7 +8,7 @@ db:
 www:
     build: .
     ports:
-        - "80:8080"
+        - "8000:8080"
     volumes:
         - /root/www/logs:/www/logs
         - /root/www/public:/www/public
