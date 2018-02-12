@@ -7,3 +7,9 @@ html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="ja")
 
         block head
     block body
+        .buy.float-el.fixed
+            a(href=web_cfg&&web_cfg.buy_url ? web_cfg.buy_url.value : '')
+                img.img-responsive(src="/img/buy.png", alt="", srcset="")
+        .prize_draw.float-el.fixed
+            a(href=web_cfg&&web_cfg.buy_url ? web_cfg.prize_draw_url.value : '')
+                img.img-responsive(src="/img/prize_draw.png", alt="", srcset="")

@@ -1,6 +1,6 @@
 extends ./layouts/default
 
-block body
+block append body
     - var prefix = category.name
     body(
         class="#{category.name} main"
@@ -64,6 +64,6 @@ block body
                         a(href="/category/id/#{products_id}")
                             | 更多评测
             .foot
-                img.img-responsive.idle.wow.zoomIn(src="/img/#{prefix}/foot.png",data-wow-offset="250")
+                img.img-responsive.idle.wow.zoomIn(src="/img/#{prefix}/foot.png",data-wow-offset="200")
                 .sale
                     img.img-responsive(src="/img/#{prefix}/sale.png")
