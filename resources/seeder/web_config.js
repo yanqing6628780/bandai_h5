@@ -6,6 +6,16 @@ module.exports = function (db) {
     exports.run = function () {
         var data = [
             {
+                key: "prize_draw_url",
+                name: "抽奖链接",
+                value: ""
+            },
+            {
+                key: "buy_url",
+                name: "购买链接",
+                value: ""
+            },
+            {
                 key: "web_name",
                 name: "网站名称",
                 value: "Bandi"
