@@ -191,8 +191,8 @@ module.exports = function(app, passport) {
                 return next(err);
             }
         } else {
-            app.logger.dateLogger.error('链接:' + req.originalUrl + ' 应用错误');
-            app.logger.dateLogger.error(err);
+            app.logger.error('链接:' + req.originalUrl + ' 应用错误');
+            app.logger.error(err);
         }
         // production error handler
         // no stacktraces leaked to user
