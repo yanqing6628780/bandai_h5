@@ -36,8 +36,8 @@ module.exports = function (app) {
                     throw err;
                 }
             }).catch((err) => {
-                app.log.dateLogger.error('查找分类首页数据失败：');
-                app.log.dateLogger.error(err);
+                app.logger.dateLogger.error('查找分类首页数据失败：');
+                app.logger.dateLogger.error(err);
                 return app.notFound(req, res, next);
             });
         } catch (err) {
