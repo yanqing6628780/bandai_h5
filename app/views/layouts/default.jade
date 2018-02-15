@@ -1,15 +1,20 @@
+block variables
 doctype strict
 include ./base
-html(xmlns="http://www.w3.org/1999/xhtml", xml:lang="ja")
+html.front(xmlns="http://www.w3.org/1999/xhtml", xml:lang="ja")
     head
         title #{title} | #{web_cfg.web_name.value}
         include ./head
-
         block head
-    block body
-        .buy.float-el.fixed
-            a(href=web_cfg&&web_cfg.buy_url ? web_cfg.buy_url.value : '')
-                img.img-responsive(src="/img/buy.png", alt="", srcset="")
-        .prize_draw.float-el.fixed
-            a(href=web_cfg&&web_cfg.buy_url ? web_cfg.prize_draw_url.value : '')
-                img.img-responsive(src="/img/prize_draw.png", alt="", srcset="")
+    body.main(class=body_class style=body_style)
+        block main
+        block ad
+            .buy.float-el.fixed
+                a(href=web_cfg&&web_cfg.buy_url ? web_cfg.buy_url.value : '')
+                    img.img-responsive(src="/img/buy.png", alt="", srcset="")
+            .prize_draw.float-el.fixed
+                a(href=web_cfg&&web_cfg.buy_url ? web_cfg.prize_draw_url.value : '')
+                    img.img-responsive(src="/img/prize_draw.png", alt="", srcset="")
+        block copyright
+            .copyright
+                | #{web_cfg.web_name ? web_cfg.web_copyright.value : ''}

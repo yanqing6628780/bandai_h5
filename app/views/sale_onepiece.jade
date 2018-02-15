@@ -1,0 +1,16 @@
+extends ./layouts/default
+block variables
+    - var body_class = category.name + '-sale sale'
+block main
+    - var prefix = category.name
+    .recommand
+        img.title(src="/img/#{prefix}/recommand.png")
+        if (article.cover_pic)
+            img.img-responsive.cover(src=article.cover_pic)
+    .line
+    .more-shop
+        img.title(src="/img/#{prefix}/more-shop.png", alt="", srcset="")
+        .content-body
+            if (article.content)
+                | !{article.content}
+block ad

@@ -39,6 +39,7 @@ module.exports = function(app, passport) {
     frontPage.get('/article/id/:id', app.notFound);
     frontPage.get('/category/id/:id', controllers.category.id);
     frontPage.get('/category/:name', controllers.category.index);
+    frontPage.get('/sale/:name', controllers.sale.index);
 
     app.use('/', frontPage);
 

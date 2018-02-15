@@ -69,7 +69,7 @@ module.exports = (gulp, config, $, args) ->
             runTaskAndBrowserSync 'image:build'
 
         gulp.watch [
-            "#{config.source}app/views/**"
+            "#{config.source}app/views/**/*.jade"
         ], (event) ->
             console.log "File #{event.path} was #{event.type}"
             runTaskAndBrowserSync []

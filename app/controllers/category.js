@@ -1,5 +1,4 @@
 let mongoose = require('mongoose');
-let fn = require('../utils/fn.js');
 module.exports = function (app) {
     let exports = {},
         ArticleM = app.models.articles,

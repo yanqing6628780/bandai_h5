@@ -1,57 +1,55 @@
 extends ./layouts/default
-
-block append body
+block variables
+    - var body_class = category.name
+    - var body_style = {'background-image': 'url(/img/' + category.name + '.jpg)'}
+block main
     - var prefix = category.name
-    body(
-        class="#{category.name} main"
-        style={
-            'background-image': 'url(/img/' + category.name + '.jpg)',
-        }
-    )
-        .layout
-            img.desc-title(src="/img/#{prefix}/desc-title.png")
-            .video-box
-                .video
-                    | !{category.video}
-            .desc
-                .desc-bg.wow.zoomIn(data-wow-offset="100")
-            .news-box
-                img.news-title(src="/img/#{prefix}/news-title.png")
-                .news
-                    a(href="/category/id/#{news_id}")
-                        img.news-more(src="/img/#{prefix}/more.png")
-                    ul.news-list.list-unstyled
-                        if (news)
-                            each item in news
-                                li
-                                    +title(item)
-            .products
-                img.products-title(src="/img/#{prefix}/products-top-title.png")
-                a(href="/category/id/#{products_id}")
-                    img.products-more(src="/img/#{prefix}/products-more.png")
-                .products-top-box
-                    - var n = 0
-                    while n < 4
-                        div(class="products-top products-top-#{n+1}")
-                            if ( n === 3 )
-                                img.idle.wow.fadeInLeft(src="/img/#{prefix}/idle-#{n+1}.png",data-wow-offset="100")
-                                img.idle-right.wow.fadeInRight(src="/img/#{prefix}/idle-#{n+2}.png",data-wow-offset="100")
-                            else
-                                img.idle.wow(
-                                    src="/img/#{prefix}/idle-#{n+1}.png"
-                                    class="#{n==1?'fadeInLeft':'fadeInRight'}"
-                                    data-wow-offset="100"
+    .layout
+        img.desc-title(src="/img/#{prefix}/desc-title.png")
+        .video-box
+            .video
+                | !{category.video}
+        .desc
+            .desc-bg.wow.zoomIn(data-wow-offset="100")
+        .news-box
+            img.news-title(src="/img/#{prefix}/news-title.png")
+            .news
+                a(href="/category/id/#{news_id}")
+                    img.news-more(src="/img/#{prefix}/more.png")
+                ul.news-list.list-unstyled
+                    if (news)
+                        each item in news
+                            li
+                                +title(item)
+        .products
+            img.products-title(src="/img/#{prefix}/products-top-title.png")
+            a(href="/category/id/#{products_id}")
+                img.products-more(src="/img/#{prefix}/products-more.png")
+            .products-top-box
+                - var n = 0
+                while n < 4
+                    div(class="products-top products-top-#{n+1}")
+                        if ( n === 3 )
+                            img.idle.wow.fadeInLeft(src="/img/#{prefix}/idle-#{n+1}.png",data-wow-offset="100")
+                            img.idle-right.wow.fadeInRight(src="/img/#{prefix}/idle-#{n+2}.png",data-wow-offset="100")
+                        else
+                            img.idle.wow(
+                                src="/img/#{prefix}/idle-#{n+1}.png"
+                                class="#{n==1?'fadeInLeft':'fadeInRight'}"
+                                data-wow-offset="100"
+                            )
+                        if (products && products[n])
+                            - var item = products[n]
+                            div.content
+                                img.content_cover(
+                                    src="#{item.cover_pic}"
                                 )
-                            if (products && products[n])
-                                - var item = products[n]
-                                div.content
-                                    img.content_cover(
-                                        src="#{item.cover_pic}"
-                                    )
-                                    p.content-title
-                                        +title(item)
-                        - n++
-            .foot
-                img.img-responsive.idle.wow.zoomIn(src="/img/#{prefix}/foot.png",data-wow-offset="100")
-                .sale
+                                p.content-title
+                                    +title(item)
+                    - n++
+        .foot
+            img.img-responsive.idle.wow.zoomIn(src="/img/#{prefix}/foot.png",data-wow-offset="100")
+            .sale
+                a(href='/sale/#{prefix}')
                     img.img-responsive(src="/img/#{prefix}/sale.png")
+block copyright
