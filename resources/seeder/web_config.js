@@ -29,18 +29,17 @@ module.exports = function (db) {
                 key: "web_description",
                 name: "网站描述",
                 value: "Bandi"
-            }
+            },
             // {
             //     key: "web_notice",
             //     name: "网站公告",
             //     value: "Bandi"
             // },
-            // {
-            //     key: "web_copyright",
-            //     name: "网站版权信息",
-            //     type: 'editor',
-            //     value: "©BIRD STUDIO/SHUEISHA,TOEI ANIMATION"
-            // }
+            {
+                key: "web_copyright",
+                name: "网站版权信息",
+                value: "©Eiichiro Oda/Shueisha, Toei Animation"
+            }
         ];
         return Model.remove()
             .then(() => {
