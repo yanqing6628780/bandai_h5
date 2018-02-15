@@ -1,26 +1,26 @@
 extends ./layouts/default
-
-block body
+block variables
     - var category = rs.parent_id
-    body(
-        class="#{category.name} articles main"
-    )
-        .articles-banner
-            if (rs.image)
-                img(src='#{rs.image}')
-        if (rs.name == 'news')
-            .articles-layout
-                ul.list-unstyled.articles-news
-                    each item in rs.articles
-                        li.articles-new(class="articles-new-#{category.name}")
-                            +title(item)
-        if (rs.name == 'products')
-            .container-fluid.thumbnail-news
-                .row.thumbnail-row
-                    each item in rs.articles
-                        .col-xs-6.thumbnail-col
-                            .thumbnail.thumbnail-new
-                                +thumb-img(item.cover_pic, item.name)
-                                .caption
-                                    +title(item)
+    - var body_class = category.name + " articles main"
+    - var body_style = {'background-image': 'url(/img/' + category.name + '.jpg)'}
+block main
+    - var category = rs.parent_id
+    .articles-banner
+        if (rs.image)
+            img(src='#{rs.image}')
+    if (rs.name == 'news')
+        .articles-layout
+            ul.list-unstyled.articles-news
+                each item in rs.articles
+                    li.articles-new(class="articles-new-#{category.name}")
+                        +title(item)
+    if (rs.name == 'products')
+        .container-fluid.thumbnail-news
+            .row.thumbnail-row
+                each item in rs.articles
+                    .col-xs-6.thumbnail-col
+                        .thumbnail.thumbnail-new
+                            +thumb-img(item.cover_pic, item.name)
+                            .caption
+                                +title(item)
 
