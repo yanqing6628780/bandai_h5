@@ -13,13 +13,23 @@ html
     html
         font-size: 100px
 
+@media only screen and (min-width: 400px)
+    html
+        font-size: 107px
+
 @media only screen and (min-width: 412px)
     html
         font-size: 111px
 
-@media only screen and (min-width: 768px)
+@media only screen and (min-width: 700px) and (max-width: 768px)
     html
         font-size: 206px
+@media only screen and (min-width: 769px)
+    html
+        width: 375px
+        margin: auto
+        font-size: 100px
+
 
 a:active
 a:hover
@@ -68,6 +78,7 @@ a:visited
 .fixed
     position fixed
     &.buy
+        top: 85%
         left: 0
     &.prize_draw
         right: 0
