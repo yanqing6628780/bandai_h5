@@ -1,0 +1,10 @@
+extends ./layouts/default
+block main
+    .container
+        .row
+            .col-md-12
+                h1
+                    | #{title}
+            .col-md-12.detail-content
+                | !{article.content}
+block ad

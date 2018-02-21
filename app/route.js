@@ -36,7 +36,7 @@ module.exports = function(app, passport) {
     frontPage.use(middlewares.view.getCommonData);
 
     frontPage.get('/', controllers.index.home);
-    frontPage.get('/article/id/:id', app.notFound);
+    frontPage.get('/article/id/:id', controllers.article.detail);
     frontPage.get('/category/id/:id', controllers.category.id);
     frontPage.get('/category/:name', controllers.category.index);
     frontPage.get('/sale/:name', controllers.sale.index);

@@ -12,7 +12,7 @@ module.exports = function (app) {
                 category: rs
             };
             resData.article = lodash.find(rs.articles, {name: '销售渠道'})
-            return res.render('sale_' + rs.name, resData);
+            return res.render('sale', resData);
         } catch (err) {
             console.log(err);
             return app.notFound(req, res, next);

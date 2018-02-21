@@ -6,7 +6,8 @@ block main
     .recommand
         img.title(src="/img/#{prefix}/recommand.png")
         if (article&&!!article.cover_pic)
-            img.img-responsive.cover(src=article.cover_pic)
+            a(href=article.url ? article.url : '')
+                img.img-responsive.cover(src=article.cover_pic)
     .line
     .more-shop
         img.title(src="/img/#{prefix}/more-shop.png", alt="", srcset="")
