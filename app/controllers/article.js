@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-let fn = require('../utils/fn.js');
+let monment = require('moment')
 let ObjectId = mongoose.Types.ObjectId;
 module.exports = function (app) {
     let exports = {},
@@ -24,6 +24,7 @@ module.exports = function (app) {
             .then((data) => {
                 res.render('detail', {
                     title: data.name,
+                    date: monment(data.createdAt).format('YYYY-MM-DD'),
                     article: data
                 });
             });
