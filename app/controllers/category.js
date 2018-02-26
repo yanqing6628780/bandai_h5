@@ -11,7 +11,7 @@ module.exports = function (app) {
                 const child = rs.children[x];
                 let aP = ArticleM.find({ cids: child._id }).sort({
                     is_top: 'desc',
-                    id: 'desc'
+                    createdAt: 'desc'
                 });
                 if(child.name == 'news') {
                     aP.limit(4);
