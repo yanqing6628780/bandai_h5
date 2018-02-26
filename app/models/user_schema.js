@@ -135,6 +135,9 @@ var reasons = userSchema.statics.failedLogin = {
     BAN: 2
 };
 
+userSchema.statics.getFailReasons = function () {
+    return reasons;
+};
 userSchema.statics.getAuthenticated = function (candidate, callback) {
     this.findOne({
         username: candidate.username
