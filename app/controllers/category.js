@@ -69,7 +69,10 @@ module.exports = function (app) {
             _id: id
         })
         .populate('parent_id')
-        .populate('articles')
+        .populate({
+            path: 'articles',
+            options: { sort: { is_top: 'desc', 'createdAt': 'desc'} }
+        })
         .exec().then((rs) => {
             if (!rs) return next(new Error('404'));
             return rs;
