@@ -39,7 +39,9 @@ block main
                         - var item = products[n]
                         div.content
                             +link(item)
-                                img.content_cover(src="#{item.cover_pic}")
+                                img.content_cover(
+                                    src=item.cover_pic ? item.cover_pic : ''
+                                )
                             p.content_title
                                 +title(item)
                 - n++

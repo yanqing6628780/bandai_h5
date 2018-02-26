@@ -42,7 +42,7 @@ block main
                             - var item = products[n]
                             div.content
                                 img.content_cover(
-                                    src="#{item.cover_pic}"
+                                    src=item.cover_pic ? item.cover_pic : ''
                                 )
                                 p.content-title
                                     +title(item)

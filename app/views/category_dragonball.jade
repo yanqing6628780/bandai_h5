@@ -40,7 +40,7 @@ block main
                                 if ( (n+1) < 3 )
                                     img.ball(src="/img/#{prefix}/ico.png")
                                 img.content_cover(
-                                    src="#{item.cover_pic}"
+                                    src=item.cover_pic ? item.cover_pic : ''
                                 )
                                 p.content_title
                                     +title(item)
