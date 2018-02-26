@@ -97,3 +97,6 @@ mixin cate_radio(item, checked, level)
                 | #{item.display_name}
             else
                 b #{item.display_name}
+
+mixin delBtn(url, item)
+    button.btn.btn-danger(onclick='del("#{url}/delete/#{item._id}")') 删

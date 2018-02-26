@@ -15,7 +15,7 @@ mixin toHtml(item, cnt)
             .btn-group
                 a.btn.btn-success(href='#{url}/add/?parent_id=#{item._id}') 添加子栏目
                 a.btn.btn-info(href='#{url}/edit/#{item._id}') 改
-                a.btn.btn-danger(href='#{url}/delete/#{item._id}') 删
+                +delBtn(url, item)
     if item.son && item.son.length
         for it in item.son
             +toHtml(it, cnt+1)

@@ -76,4 +76,9 @@ html(lang="zh-cn")
                     language: "zh-CN"
                 });
             });
+            function del(url) {
+                if (confirm('是否删除条目')) {
+                    window.location.href = url
+                }
+            }
         block scripts

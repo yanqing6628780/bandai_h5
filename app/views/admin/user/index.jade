@@ -28,4 +28,4 @@ block content
                     td
                         .btn-group
                             a.btn.btn-info(href='#{url}/edit/#{item._id}') 改
-                            a.btn.btn-danger(href='#{url}/delete/#{item._id}') 删
+                            button.btn.btn-danger(onclick='del("#{url}/delete/#{item._id}")') 删

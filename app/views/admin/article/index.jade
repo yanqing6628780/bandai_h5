@@ -37,12 +37,12 @@ block content
     div.row
         div.col-md-12
             a.btn.btn-success(href='#{url}/add') 新增
-    table.table
+    table.table.tabel-layout-fixed
         thead
             th #
             th 名称
             th 所属栏目
-            th 跳转链接
+            th(style="width:20%") 跳转链接
             th 创建日期
             th 是否置顶
             th 操作
@@ -63,4 +63,4 @@ block content
                     td
                         .btn-group
                             a.btn.btn-info(href='#{url}/edit/#{item._id}') 改
-                            a.btn.btn-danger(href='#{url}/delete/#{item._id}') 删
+                            +delBtn(url, item)
