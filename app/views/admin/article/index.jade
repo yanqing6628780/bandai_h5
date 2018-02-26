@@ -58,7 +58,7 @@ block content
                         - ref.join("，")
                         | #{ref}
                     td= item.url
-                    td= moment(item.createAt).format('YYYY-MM-DD')
+                    td= moment(item.createAt).format('YYYY-MM-DD HH:mm:s')
                     td= item.is_top ? '是' : '否'
                     td
                         .btn-group
