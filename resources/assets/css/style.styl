@@ -135,6 +135,12 @@ ellipsis(w)
     .idle
         animation-duration: 1s;
 
+#youkuplayer
+    margin: auto;
+    position absolute
+    left 0
+    right 0
+    bottom: 0
 .onepiece
     color: font-color
     .content_title
@@ -144,11 +150,10 @@ ellipsis(w)
         background('onepiece-video')
         margin-top: 2.65rem;
         height: 3.3rem;
-        iframe
+        #youkuplayer
             width: 2.67rem !important;
             height: 1.7rem !important;
-            margin: auto;
-            margin-top: 1.36rem;
+            bottom: .25rem
     .desc
         margin-top: 10px
         &-bg
@@ -318,7 +323,7 @@ background2(dir, imgName, filetype='png')
         background2('dragonball', 'video', 'jpg')
         height: 1.96rem;
         position relative
-        iframe
+        #youkuplayer
             width: 3.1rem !important;
             height: 1.97rem !important;
         &-idle
@@ -485,10 +490,10 @@ background2(dir, imgName, filetype='png')
         position relative
         &-box
             margin-top: .2rem
-        iframe
+        #youkuplayer
             width: 2.6rem !important;
             height: 1.72rem !important;
-            margin-top: 0.19rem;
+            bottom .21rem
     .desc
         &-title
             height: .57rem
