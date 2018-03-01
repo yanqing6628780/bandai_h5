@@ -7,6 +7,11 @@ html.front(xmlns="http://www.w3.org/1999/xhtml", xml:lang="ja")
         include ./head
         block head
     body.main(class=body_class style=body_style)
+        if (category && category.video)
+            input#youkuplayer_vid(
+                type="hidden"
+                value=category.video
+            )
         block main
         block ad
             .buy.float-el.fixed.animated.infinite.pulse
@@ -18,3 +23,15 @@ html.front(xmlns="http://www.w3.org/1999/xhtml", xml:lang="ja")
         block copyright
             .copyright
                 | #{web_cfg.web_copyright ? web_cfg.web_copyright.value : ''}
+        script.
+            var vid = $('#youkuplayer_vid').val();
+            if (vid && $('#youkuplayer').length)  {
+                var player = new YKU.Player('youkuplayer',{
+                    styleid: '0',
+                    client_id: 'dda1d9f85ff05980',
+                    vid: vid,
+                    newPlayer: true,
+                    show_related: false,
+                    autoplay: true
+                });
+            }
