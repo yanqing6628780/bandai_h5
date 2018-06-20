@@ -23,7 +23,7 @@ html.front(xmlns="http://www.w3.org/1999/xhtml", xml:lang="ja")
                         img.img-responsive(src="/img/prize_draw.png", alt="", srcset="")
         block copyright
             .copyright
-                | #{web_cfg.web_copyright ? web_cfg.web_copyright.value : ''}
+                | !{web_cfg.web_copyright ? web_cfg.web_copyright.value : ''}
         script.
             var vid = $('#youkuplayer_vid').val();
             if (vid && $('#youkuplayer').length)  {
