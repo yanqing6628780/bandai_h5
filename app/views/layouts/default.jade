@@ -6,20 +6,21 @@ html.front(xmlns="http://www.w3.org/1999/xhtml", xml:lang="ja")
         title #{title} | #{web_cfg.web_name.value}
         include ./head
         block head
-    body.main(class=body_class style=body_style)
-        if (category && category.video)
-            input#youkuplayer_vid(
-                type="hidden"
-                value=category.video
-            )
-        block main
-        block ad
-            .buy.float-el.fixed.animated.infinite.pulse
-                a(href=category ? "/sale/#{category.name}" : "javascript:void(0)")
-                    img.img-responsive(src="/img/buy.png", alt="", srcset="")
-            .prize_draw.float-el.fixed.animated.infinite.pulse
-                a(href=web_cfg&&web_cfg.prize_draw_url ? web_cfg.prize_draw_url.value : '')
-                    img.img-responsive(src="/img/prize_draw.png", alt="", srcset="")
+    body(class=body_class)
+        .main(style=body_style)
+            if (category && category.video)
+                input#youkuplayer_vid(
+                    type="hidden"
+                    value=category.video
+                )
+            block main
+            block ad
+                .buy.float-el.fixed.animated.infinite.pulse
+                    a(href=category ? "/sale/#{category.name}" : "javascript:void(0)")
+                        img.img-responsive(src="/img/buy.png", alt="", srcset="")
+                .prize_draw.float-el.fixed.animated.infinite.pulse
+                    a(href=web_cfg&&web_cfg.prize_draw_url ? web_cfg.prize_draw_url.value : '')
+                        img.img-responsive(src="/img/prize_draw.png", alt="", srcset="")
         block copyright
             .copyright
                 | #{web_cfg.web_copyright ? web_cfg.web_copyright.value : ''}
