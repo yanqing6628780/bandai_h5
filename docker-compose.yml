@@ -1,18 +1,34 @@
-db:
-    image: mongo
-    volumes:
-        - /root/www/db:/data
-    container_name: db
-    restart: always
+services:
+    db:
+        image: mongo
+        volumes:
+            - /root/www/db:/data
+        container_name: db
+        restart: always
 
-www:
-    build: .
-    ports:
-        - "8000:8080"
-    volumes:
-        - /root/www/logs:/www/logs
-        - /root/www/public:/www/public
-    links:
-        - db
-    container_name: www
-    restart: always
+    www:
+        build: .
+        volumes:
+            - /root/www/logs:/www/logs
+            - /root/www/public:/www/public
+        links:
+            - db
+        depends_on:
+            - db
+        container_name: www
+        restart: always
+
+    nginx:
+        image: nginx
+        ports:
+            - "9527:9527"
+            - "8989:8989"
+        volumes:
+            - /root/nginx.conf:/etc/nginx/nginx.conf:ro
+            # - /root/ssl:/root/ssl:ro
+        links:
+            - www
+        depends_on:
+            - www
+        container_name: nginx
+        restart: always
